@@ -1,35 +1,177 @@
-# LLM Function Calling Examples
+# 🚀 YoMo LLM Function Calling Examples
 
-This repository contains examples of how to create a LLM (Large Language Model) Function Calling serverless by [YoMo framework](https://github.com/yomorun/yomo).
+**Build powerful AI agents with the best open-source serverless function calling framework.**
 
-## Write Once, Run on any Model
+This repository showcases real-world examples of LLM Function Calling using [YoMo](https://github.com/yomorun/yomo) - the fastest, most developer-friendly way to create serverless functions that your AI agents can call.
 
-YoMo support multiple LLM providers, like Ollama, Mistral, Llama, Azure OpenAI, Cloudflare AI Gateway, etc. You can choose the one you want to use, details can be found on [Doc: LLM Providers](https://yomo.run/docs/llm-providers) and [Doc: Configuration](https://yomo.run/docs/zipper-configuration).
+## Why YoMo for AI Agent Development?
 
-## Examples List
+### 🎯 **Built for AI Agents**
+- **Type-Safe Development**: Write functions in TypeScript or Go with full type safety
+- **LLM-Ready**: Functions automatically generate JSON schemas for seamless LLM integration
+- **Real-Time Performance**: Ultra-low latency for responsive AI interactions
 
-### Node.js
+### 🔄 **Write Once, Run Anywhere**
+- **Multi-Model Support**: Works with OpenAI, Claude, Llama, Mistral, Azure OpenAI, and more
+- **Provider Flexibility**: Switch between LLM providers without changing your functions
+- **No Vendor Lock-in**: Deploy on any cloud or self-host
 
-- [node-tool-get-weather](./node-tool-get-weather): Get the weather information by city name by 3rd party API.
-- [node-tool-currency-converter](./node-tool-currency-converter): Currency Calculator by 3rd party API.
-- [node-tool-get-utc-time](./node-tool-get-utc-time): Get the UTC time by city name.
-- [node-tool-get-ip-and-latency](./node-tool-get-ip-and-latency): Get IP and Latency by give website name like "Nike" and "Amazone" by `ping` command.
-- [node-tool-send-mail-smtp](./node-tool-send-mail-smtp): Send email by `nodemailer` and `maildev`.
-- [node-tool-send-mail-resend](./node-tool-send-mail-resend): Send email by `resend`.
-- [node-tool-google-web-search](./node-tool-google-web-search): Search the web by Google Custom Search Engine.
-- [node-tool-tavily-web-search](./node-tool-tavily-web-search): Search the web by [Tavily](https://tavily.com/) Search Engine.
-- [node-tool-duckduckgo-web-search](./node-tool-duckduckgo-web-search): Search the web by [DuckDuckGo](https://github.com/Snazzah/duck-duck-scrape) Search Engine.
+### ⚡ **Developer Experience**
+```bash
+# Install YoMo CLI
+curl -fsSL https://get.yomo.run | sh
 
-### Golang
+# Run any example
+cd node-tool-get-weather
+yomo run -n get-weather
+```
 
-- [golang-tool-get-weather](./golang-tool-get-weather): Get the weather information by city name by 3rd party API.
-- [golang-tool-currency-converter](./golang-tool-currency-converter): Currency Calculator by 3rd party API.
-- [golang-tool-get-utc-time](./golang-tool-get-utc-time): Get the UTC time by city name.
-- [golang-tool-timezone-calculator](./golang-tool-timezone-calculator): Calculate the timezone for a specific time.
-- [golang-tool-get-ip-and-latency](./golang-tool-get-ip-and-latency): Get IP and Latency by give website name like "Nike" and "Amazone" by `ping` command.
-- [golang-tool-send-mail-smtp](./golang-tool-send-mail-smtp): Send email by smtp.
-- [golang-tool-send-mail-resend](./golang-tool-send-mail-resend): Send email by `resend`.
+### 🌍 **Production Ready**
+- **Geo-Distributed**: Deploy globally for low latency worldwide
+- **Auto-Scaling**: Handle any load automatically  
+- **Self-Hosting**: Full control over your infrastructure
 
-## Self Hosting
+## Quick Start
 
-Check [Docs: Self Hosting](https://yomo.run/docs/self-hosting) for details on how to deploy YoMo LLM Bridge and Function Calling Serverless on your own infrastructure. Furthermore, if your AI agents become popular with users all over the world, you may consider deploying in multiple regions to improve LLM response speed. Check [Docs: Geo-distributed System](https://yomo.run/docs/glossary) for instructions on making your AI applications more reliable and faster.
+**Try it in 2 minutes:**
+
+1. **Clone and run an example:**
+```bash
+git clone https://github.com/ivonefilippo/llm-function-calling-examples.git
+cd llm-function-calling-examples/node-tool-get-weather
+yomo run -n get-weather
+```
+
+2. **Test with your LLM:**
+```bash
+curl https://api.vivgrid.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <your-token>" \
+  -d '{
+    "model": "gpt-4o",  
+    "messages": [{"role": "user", "content": "What's the weather in Tokyo?"}]
+  }'
+```
+
+That's it! Your AI agent now has weather capabilities.
+
+## 📚 Function Examples
+
+Explore real-world serverless functions organized by category:
+
+### 🌦️ **Weather & Location**
+| Function | Language | Description |
+|----------|----------|-------------|
+| [node-tool-get-weather](./node-tool-get-weather) | TypeScript | Get weather by city using OpenWeatherMap API |
+| [node-tool-get-weather-google-api](./node-tool-get-weather-google-api) | TypeScript | Get weather using Google Weather API |
+| [golang-tool-get-weather](./golang-tool-get-weather) | Go | Weather information with geo-coordinates |
+| [node-tool-get-utc-time](./node-tool-get-utc-time) | TypeScript | Get UTC time by city name |
+| [golang-tool-get-utc-time](./golang-tool-get-utc-time) | Go | UTC time lookup |
+| [golang-tool-timezone-calculator](./golang-tool-timezone-calculator) | Go | Calculate timezone for specific time |
+
+### 💰 **Financial & Data**
+| Function | Language | Description |
+|----------|----------|-------------|
+| [node-tool-currency-converter](./node-tool-currency-converter) | TypeScript | Real-time currency conversion |
+| [golang-tool-currency-converter](./golang-tool-currency-converter) | Go | Currency calculator with live rates |
+
+### 🔍 **Web Search & Network**
+| Function | Language | Description |
+|----------|----------|-------------|
+| [node-tool-google-web-search](./node-tool-google-web-search) | TypeScript | Search using Google Custom Search |
+| [node-tool-tavily-web-search](./node-tool-tavily-web-search) | TypeScript | Web search via [Tavily](https://tavily.com/) |
+| [node-tool-duckduckgo-web-search](./node-tool-duckduckgo-web-search) | TypeScript | Privacy-focused DuckDuckGo search |
+| [node-tool-get-ip-and-latency](./node-tool-get-ip-and-latency) | TypeScript | Get IP and latency for websites |
+| [golang-tool-get-ip-and-latency](./golang-tool-get-ip-and-latency) | Go | Network diagnostics with ping |
+
+### 📧 **Communication**
+| Function | Language | Description |
+|----------|----------|-------------|
+| [node-tool-send-mail-smtp](./node-tool-send-mail-smtp) | TypeScript | Send email via SMTP with nodemailer |
+| [node-tool-send-mail-resend](./node-tool-send-mail-resend) | TypeScript | Modern email via [Resend](https://resend.com/) API |
+| [golang-tool-send-mail-smtp](./golang-tool-send-mail-smtp) | Go | Email sending with Go SMTP |
+| [golang-tool-send-mail-resend](./golang-tool-send-mail-resend) | Go | Resend integration for Go |
+
+### 🗄️ **Database**
+| Function | Language | Description |
+|----------|----------|-------------|
+| [node-tool-postgres-db](./node-tool-postgres-db) | TypeScript | PostgreSQL database operations |
+
+## 💡 How It Works
+
+Each example demonstrates the YoMo pattern:
+
+**TypeScript Functions:**
+```typescript
+// 1. Define what your function does
+export const description = 'Get current weather for a city'
+
+// 2. Define typed arguments  
+export type Argument = {
+  city: string
+  latitude: number
+  longitude: number
+}
+
+// 3. Implement your logic
+export async function handler(args: Argument) {
+  // Your AI agent logic here
+  return weatherData
+}
+```
+
+**Go Functions:**
+```go
+// 1. Describe the function
+func Description() string {
+  return "Get current weather for a city"
+}
+
+// 2. Define schema
+type LLMArguments struct {
+  City      string  `json:"city"`
+  Latitude  float64 `json:"latitude"`
+  Longitude float64 `json:"longitude"`  
+}
+
+// 3. Handle requests
+func Handler(ctx serverless.Context) {
+  // Your AI agent logic here
+}
+```
+
+## 🚀 Next Steps
+
+### 🏗️ **Build Your Own Function**
+```bash
+# Create new function from template
+yomo init my-awesome-function
+
+# Develop and test locally  
+yomo dev
+
+# Deploy to production
+yomo deploy
+```
+
+### 🌐 **Deploy Anywhere**
+
+**☁️ Managed Cloud**: Use [VivGrid](https://console.vivgrid.com/) for instant deployment with global edge locations.
+
+**🏠 Self-Host**: Deploy on your own infrastructure:
+- [Self-Hosting Guide](https://yomo.run/docs/self-hosting) - Full control over your deployment
+- [Geo-distributed Setup](https://yomo.run/docs/glossary) - Multi-region for global performance
+- Kubernetes, Docker, or bare metal support
+
+### 📖 **Resources**
+- **[YoMo Documentation](https://yomo.run/docs)** - Complete guides and API reference
+- **[LLM Providers](https://yomo.run/docs/llm-providers)** - Integrate with any LLM
+- **[GitHub](https://github.com/yomorun/yomo)** - Star us and contribute!
+
+---
+
+**Ready to build the future of AI agents?** Start with YoMo today! 🎉
+
+[![GitHub stars](https://img.shields.io/github/stars/yomorun/yomo?style=social)](https://github.com/yomorun/yomo)
+[![Documentation](https://img.shields.io/badge/docs-yomo.run-blue)](https://yomo.run/docs)
+[![Discord](https://img.shields.io/discord/770589787404640267?label=discord&logo=discord)](https://discord.gg/CTH3wv9)
