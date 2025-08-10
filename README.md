@@ -37,7 +37,7 @@ yomo run -n get-weather
 
 1. **Clone and run an example:**
 ```bash
-git clone https://github.com/ivonefilippo/llm-function-calling-examples.git
+git clone https://github.com/yomorun/llm-function-calling-examples.git
 cd llm-function-calling-examples/node-tool-get-weather
 yomo run -n get-weather
 ```
