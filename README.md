@@ -43,10 +43,13 @@ yomo run -n get-weather
 ```
 
 2. **Test with your LLM:**
+
+You can grab a free account on [vivgrid.com](https://console.vivgrid.com) to build your AI Agent:
+
 ```bash
 curl https://api.vivgrid.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <your-token>" \
+  -H "Authorization: Bearer <your-vivgrid.com-token>" \
   -d '{
     "model": "gpt-4o",  
     "messages": [{"role": "user", "content": "What's the weather in Tokyo?"}]
@@ -106,7 +109,7 @@ Each example demonstrates the YoMo pattern:
 // 1. Define what your function does
 export const description = 'Get current weather for a city'
 
-// 2. Define typed arguments  
+// 2. Define typed arguments
 export type Argument = {
   city: string
   latitude: number
@@ -147,11 +150,8 @@ func Handler(ctx serverless.Context) {
 # Create new function from template
 yomo init my-awesome-function
 
-# Develop and test locally  
-yomo dev
-
-# Deploy to production
-yomo deploy
+# Run locally
+yomo run
 ```
 
 ### 🌐 **Deploy Anywhere**
